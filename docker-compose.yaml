@@ -1,0 +1,35 @@
+Log:
+  Level: 'info'
+
+ExternalSecure: true
+ExternalDomain: 'zitadel.domain.tld'
+ExternalPort: 443
+
+Database:
+  cockroach:
+    Host: 'domain.cockroachlabs.cloud'
+    Port: 26257
+    Database: 'defaultdb'
+    MaxOpenConns: 20
+    MaxConnLifetime: '30m'
+    MaxConnIdleTime: '30m'
+    User:
+      SSL:
+        Mode: 'verify-full'
+        RootCert: "/.postgresql/root.crt"
+    Admin:
+      SSL:
+        Mode: 'verify-full'
+        RootCert: "/.postgresql/root.crt"
+
+DefaultInstance:
+  InstanceName: ZITADEL
+  DefaultLanguage: en
+  Org:
+    Name: Zitadel
+    Human:
+      UserName: zitadel-admin
+      FirstName: zitadel
+      LastName: admin
+      DisplayName: zitadel-admin
+      Password: password
